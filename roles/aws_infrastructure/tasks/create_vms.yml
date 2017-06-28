@@ -1,0 +1,26 @@
+---
+# tasks file for aws_infrastructure
+- debug:
+    msg: "access_key_id {{ access_key_id }}"
+- debug:
+    msg: "secret_access_key {{ secret_access_key }}"
+
+- name: Provision a set of instances
+  ec2:
+    aws_access_key: "{{ access_key_id }}"
+    aws_secret_key: "{{ secret_access_key }}"
+    key_name: "{{ aws_keypair_name}}"
+    group: "{{ aws_security_group }}"
+    instance_type: "{{ aws_instance_type }}"
+    image: "{{ aws_ami_id }}"
+    wait: true
+    region: "{{ aws_availability_zone }}"
+    exact_count: "{{ aws_instance_count }}"
+    count_tag:
+      Name: Demo
+    instance_tags:
+      Name: Demo
+  register: ec2
+
+- debug:
+    msg: "{{ ec2 }}"

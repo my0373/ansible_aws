@@ -1,0 +1,8 @@
+---
+- name: Setup the lab in AWS
+  hosts: localhost
+  connection: local
+  vars_files:
+    - 'vars/credentials.yaml'
+  roles:
+    - { role: aws_infrastructure}

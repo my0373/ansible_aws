@@ -1,0 +1,3 @@
+---
+# tasks file for aws_infrastructure
+- include:  create_vms.yml

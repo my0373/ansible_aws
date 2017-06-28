@@ -1,0 +1,15 @@
+---
+# defaults file for aws_infrastructure
+aws_instance_type: 't2.micro'
+aws_instance_count: 1
+aws_spot_instance: no
+aws_vpc_id: ""
+aws_ami_id: ""
+aws_subnet_id: ""
+aws_availability_zone: eu-west-1
+aws_keypair_name: ""
+aws_security_group: ""
+
+## You probably want to put this encrypted somewhere else!
+access_key_id: ""
+secret_access_key: ""
